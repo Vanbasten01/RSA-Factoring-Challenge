@@ -9,8 +9,6 @@ def factor(n):
     for i in range(3, int(sqrt(n)) + 1, 2):
         if n % i == 0:
             yield i
-            while n % i == 0:
-                n //= i
     if n > 2:
         yield n
 
@@ -25,4 +23,3 @@ with open(argv[1]) as f:
         for i in factor(n):
             print("{}*{}".format(n//i, i))
             break
-        print()
